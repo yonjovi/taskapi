@@ -8,7 +8,11 @@ db_password = os.environ['DB_PASSWORD']
 db_host = os.environ['DB_HOST']
 db_name = os.environ['DB_NAME']
 
-SQLALCHEMY_DATABASE_URL = f"postgresql://{db_username}:{db_password}@{db_host}/{db_name}"
+db_url = os.environ['DB_URL']
+
+
+# SQLALCHEMY_DATABASE_URL = f"postgresql://{db_username}:{db_password}@{db_host}/{db_name}"
+SQLALCHEMY_DATABASE_URL = db_url
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
